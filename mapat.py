@@ -30,6 +30,6 @@ def mapat_mod(f,lst,ind,*,unpack=False):
     for i in ind[:-1]:
         base = base[i]
     if unpack:
-        base[ind[-1]] = f(base[ind[-1]])
-    else:
         base[ind[-1]] = f(*base[ind[-1]])
+    else:
+        base[ind[-1]] = f(base[ind[-1]])

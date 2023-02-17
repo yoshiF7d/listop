@@ -10,10 +10,15 @@
 # >>> partition(['a','b','c','d','e','f','g'],3,1)
 # [['a', 'b', 'c'], ['b', 'c', 'd'], ['c', 'd', 'e'], ['d', 'e', 'f'], ['e', 'f', 'g']]
 
-def partition(lst,n,d=None,*,tail=False):
+def partition(lst,n,d=None,*,tail=False,unlist=False):
     if d is None:
         d = n
-    rtn = [lst[i:i+n] for i in range(0,len(lst),d)]
+    
+    if unlist and n==1:
+        rtn = [lst[i] for i in range(0,len(lst),d)]
+    else:
+        rtn = [lst[i:i+n] for i in range(0,len(lst),d)]
+    
     if tail:
         return rtn
     else:

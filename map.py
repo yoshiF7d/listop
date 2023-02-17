@@ -12,7 +12,6 @@
 # A negative level -n consists of all parts of lst with depth n.
 
 # The default value for lspec in map is [1].
-# map always constructs a complete new list.
 
 # >>> map(str.upper,['a','b','c'])
 # ['A', 'B', 'C']
@@ -23,12 +22,21 @@
 # >>> map(str.upper,['a','b',['b','c'],'d'],[-1,1])
 # ['A', 'B', ['b', 'c'], 'D']
 
+# map(f,lst,unpack=True) unpack the list before applying f. 
+
+# >>> map(lambda a,b:a+b,[['a', 'b'], ['c', 'd'], ['e', 'f']],unpack=True)
+# ['ab', 'cd', 'ef']
+
+# map constructs a complete new list on default.
+# map(f,lst,inplace=True) changes the lst inplace.
+
 import copy
 from mapat import mapat_mod
 from indices import indices
 
-def map(f,lst,lspec=[1],*,unpack=False):
-    lst = copy.deepcopy(lst)
+def map(f,lst,lspec=[1],*,unpack=False,inplace=False):
+    if not inplace:
+        lst = copy.deepcopy(lst)
     for i in indices(lst,lspec):
         mapat_mod(f,lst,i,unpack=unpack)
     return lst
