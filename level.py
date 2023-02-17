@@ -21,8 +21,8 @@
 # >>> level(['a',['b',['c','d']]],0)
 # ['a', 'b', 'c', 'd', ['c', 'd'], ['b', ['c', 'd']]]
 
-from part import part
-from indices import indices
+from .part import part
+from .indices import indices
 
 def level(lst,lspec=[1]):
     return [part(lst,*i) for i in indices(lst,lspec)]

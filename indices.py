@@ -21,8 +21,8 @@
 # >>> indices(['a',['b',['c','d']]],0)
 # [[0], [1, 0], [1, 1, 0], [1, 1, 1], [1, 1], [1]]
 
-from aslist import aslist
-from depth import depth
+from .aslist import aslist
+from .depth import depth
 
 def indices(lst,lspec=[1]):
     if isinstance(lspec,int):

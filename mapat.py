@@ -11,8 +11,8 @@
 # >>> mapat(str.upper,['a','b',['c','d']],[0,[2,0]])
 # ['A', 'b', ['C', 'd']]
 
-from depth import depth
-from aslist import aslist
+from .depth import depth
+from .aslist import aslist
 
 def mapat(f,lst,ind,*,unpack=False): 
     dep = depth(ind) 

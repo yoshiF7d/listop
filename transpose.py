@@ -16,10 +16,10 @@
 # >>> shape(b)
 # [2, 4, 3]
 
-from flatten import flatten
-from shape import shape
-from part import part
-from reshape import reshape
+from .flatten import flatten
+from .shape import shape
+from .part import part
+from .reshape import reshape
 
 def transpose(lst,axes=[1,0]):
     dim = shape(lst)

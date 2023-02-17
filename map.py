@@ -31,8 +31,8 @@
 # map(f,lst,inplace=True) changes the lst inplace.
 
 import copy
-from mapat import mapat_mod
-from indices import indices
+from .mapat import mapat_mod
+from .indices import indices
 
 def map(f,lst,lspec=[1],*,unpack=False,inplace=False):
     if not inplace:

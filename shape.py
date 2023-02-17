@@ -1,5 +1,5 @@
 # dimensions(lst) gives a list of the dimensions of lst.
-from length import length
+from .length import length
 
 def shape(lst,dim=None):
     if dim is None:

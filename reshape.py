@@ -12,8 +12,8 @@
 # [['a', 'b', 'c'], ['d', 'e', 'f'], ['x', 'x', 'x'], ['x', 'x', 'x']]
 
 import copy
-from partition import partition
-from map import map
+from .partition import partition
+from .map import map
 
 def reshape(lst,shape,pad=None,level=0,*,deepcopy=False):
     if level == 0:
